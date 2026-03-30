@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Deal or No Deal</title>
+  <link rel="stylesheet" href="deal-or-no-deal.css">
+</head>
+<body>
+  <div class="wrap" id="appWrap">
+    <h1>Deal or No Deal</h1>
+    <p class="tagline">Twenty-six cases. One is yours. Beat the banker.</p>
+
+    <p class="intro-text" id="introText">
+      Press <strong>New game</strong> to shuffle the prizes. You will choose your case, then open others round by round. After each round the banker may call with an offer — take the deal, or say no deal and play on.
+    </p>
+
+    <div class="controls">
+      <button type="button" class="btn btn-primary" id="btnNewGame">New game</button>
+    </div>
+
+    <div class="layout hidden" id="gameArea">
+      <div class="board">
+        <div class="status-bar" id="statusBar"></div>
+        <div class="boxes" id="boxGrid" aria-label="Case grid"></div>
+      </div>
+      <aside class="side-panel" aria-label="Prize ladder">
+        <h2>Remaining prizes</h2>
+        <ul class="ladder" id="ladder"></ul>
+      </aside>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <h3 id="modalTitle">Banker's offer</h3>
+      <p id="modalBody"></p>
+      <p class="offer-amount hidden" id="offerAmount"></p>
+      <div class="controls" id="modalActions"></div>
+    </div>
+  </div>
+
+  <script src="deal-or-no-deal.js"></script>
+</body>
+</html>
